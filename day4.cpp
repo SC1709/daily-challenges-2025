@@ -1,13 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
-void merge(vector<int> arr1, vector<int> arr2, int n, int m) {
-    int left = n - 1; //at last of array 1 
-    int right = 0;    //at first of array 2
-    while (left >= 0 && right < m) {
-        if (arr1[left] > arr2[right]) {
-            swap(arr1[left], arr2[right]);
-            left--;
-            right++;
+void merge(vector<int> &arr1, vector<int> &arr2, int n, int m) {
+    int r = n - 1; //at last of array 1 
+    int l = 0;    //at first of array 2
+    while (r >= 0 && l < m) {
+        if (arr1[r] > arr2[l]) {
+            swap(arr1[r], arr2[l]);
+            r--;
+            l++;
         }
         else {
             break;
