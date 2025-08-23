@@ -3,6 +3,7 @@ using namespace std;
 
 string commonPrefix(vector<string>& arr,int n){
     string s=" "; //stores mini string
+    if(n == 0) return "";
     int mini=INT_MAX;
     for(int i=0;i<n;i++){
         int len=arr[i].size();
