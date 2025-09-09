@@ -16,16 +16,16 @@ bool dfs(int src,int parent,int vis[],vector<int> adj[]){
     return false;
 }
 bool isCyclic(vector<vector<int>>& edges, int v, int e){
-    if(v==1 && e==0) return false; //edge case
-    vector<int> adj[v]; //store adj list
+    if(v==1 && e==0) return false; 
+    vector<int> adj[v]; //adj list
 	for(auto it: edges){
 		int U = it[0];
 		int V = it[1];
-		adj[U].push_back(V); //undirected graph
+		adj[U].push_back(V); 
 		adj[V].push_back(U);
 	}
-    int vis[v]={0}; //visited array
-    for(int i=0;i<v;i++){ //for components
+    int vis[v]={0}; 
+    for(int i=0;i<v;i++){ 
         if(!vis[i]){
             if(dfs(i,-1,vis,adj)==true){
                 return true;
